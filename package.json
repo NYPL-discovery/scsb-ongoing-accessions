@@ -1,0 +1,16 @@
+{
+  "name": "scsb-ongoing-accessions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "matt miller <thisismattmiller@gmail.com> (http://twitter.com/thisismmiller)",
+  "license": "ISC",
+  "dependencies": {
+    "convert-2-scsb-module": "github:nypl-discovery/convert-2-scsb-module",
+    "sierra-wrapper" : "github:nypl-registry/sierra-wrapper",
+    "request": "^2.78.0"
+  }
+}
