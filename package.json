@@ -10,7 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "convert-2-scsb-module": "github:nypl-discovery/convert-2-scsb-module",
-    "sierra-wrapper" : "github:nypl-registry/sierra-wrapper",
-    "request": "^2.78.0"
+    "highland": "^2.10.1",
+    "marcjs": "^0.1.13",
+    "request": "^2.78.0",
+    "sierra-wrapper": "github:nypl-registry/sierra-wrapper",
+    "xml2js": "^0.4.17"
   }
 }

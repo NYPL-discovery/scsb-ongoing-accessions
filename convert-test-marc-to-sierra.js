@@ -30,6 +30,7 @@ H(new marc.Iso2709Reader(fs.createReadStream('data/NYPLTEST.mrc')))
     if (counter < 90000013) {
       barcode = barcodes.shift()
     } else {
+      // this random assignment is not neeed in this case the bound with is only one barcode...
       barcode = barcodesBoundWith[Math.floor(Math.random() * (3 - 0) + 0)]
     }
 
@@ -142,6 +143,7 @@ H(new marc.Iso2709Reader(fs.createReadStream('data/NYPLTEST.mrc')))
     record.xml = builder.buildObject(record.recordObj) + '\n'
     if (!exmapleData[barcode.barcode]) exmapleData[barcode.barcode] = []
 
+    // pull out the data we need for the sheet
     record.dataFields.forEach((df) => {
       if (df['245']) {
         var title = ''
