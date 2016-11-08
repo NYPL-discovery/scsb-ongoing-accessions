@@ -4,7 +4,7 @@ const request = require('request')
 const convert2Scsb = require('convert-2-scsb-module')
 const wrapper = require('sierra-wrapper')
 
-// we don't need to fource numberic barcodes
+// we don't need to force numberic barcodes
 convert2Scsb.parseMrc.nonNumericBarcodesOkay = true
 
 console.log('Loading function')
@@ -17,7 +17,8 @@ exports.handler = (event, context, callback) => {
       statusCode: '400',
       body: JSON.stringify({ error: 'Missing barcode and customercode paramaters or bnumber and customercode paramater' }),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       }
     })
     return false
@@ -32,7 +33,8 @@ exports.handler = (event, context, callback) => {
         statusCode: '200',
         body: `<?xml version="1.0" ?><bibRecords>${mockData[event.queryStringParameters.barcode].join('\n')}</bibRecords>`,
         headers: {
-          'Content-Type': 'application/xml'
+          'Content-Type': 'application/xml',
+          'Access-Control-Allow-Origin': '*'
         }
       })
     } else {
@@ -43,7 +45,8 @@ exports.handler = (event, context, callback) => {
             statusCode: '500',
             body: JSON.stringify({ error: 'Error talking to remote API' }),
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
             }
           })
         }
@@ -52,7 +55,8 @@ exports.handler = (event, context, callback) => {
             statusCode: '500',
             body: JSON.stringify({ error: 'Error connecting to remote API' }),
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
             }
           })
         }
@@ -64,7 +68,8 @@ exports.handler = (event, context, callback) => {
               statusCode: '404',
               body: JSON.stringify({ error: 'Barcode not found' }),
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
               }
             })
           } else {
@@ -88,7 +93,8 @@ exports.handler = (event, context, callback) => {
                 statusCode: '200',
                 body: `<?xml version="1.0" ?><bibRecords>${scsbXml.join('\n')}</bibRecords>`,
                 headers: {
-                  'Content-Type': 'application/xml'
+                  'Content-Type': 'application/xml',
+                  'Access-Control-Allow-Origin': '*'
                 }
               })
             } else {
@@ -96,7 +102,8 @@ exports.handler = (event, context, callback) => {
                 statusCode: '500',
                 body: JSON.stringify({ error: 'Error parsing API into SCSB XML' }),
                 headers: {
-                  'Content-Type': 'application/json'
+                  'Content-Type': 'application/json',
+                  'Access-Control-Allow-Origin': '*'
                 }
               })
             }
@@ -121,7 +128,8 @@ exports.handler = (event, context, callback) => {
           statusCode: '500',
           body: JSON.stringify({ error: 'Error with Sierra auth' }),
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
           }
         })
       }
@@ -132,7 +140,8 @@ exports.handler = (event, context, callback) => {
             statusCode: '500',
             body: JSON.stringify({ error: 'Error retriving bib' }),
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
             }
           })
         }
@@ -143,7 +152,8 @@ exports.handler = (event, context, callback) => {
               statusCode: '500',
               body: JSON.stringify({ error: 'Error retriving items' }),
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
               }
             })
           }
@@ -169,7 +179,8 @@ exports.handler = (event, context, callback) => {
               statusCode: '500',
               body: JSON.stringify({error: 'No items would be sent to ReCAP', itemData: itemResults.data.entries}, null, 2),
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
               }
             })
           }
@@ -180,7 +191,8 @@ exports.handler = (event, context, callback) => {
               statusCode: '200',
               body: `<?xml version="1.0" ?><bibRecords>${scsbXml.join('\n')}</bibRecords>`,
               headers: {
-                'Content-Type': 'application/xml'
+                'Content-Type': 'application/xml',
+                'Access-Control-Allow-Origin': '*'
               }
             })
           } else {
@@ -188,7 +200,8 @@ exports.handler = (event, context, callback) => {
               statusCode: '500',
               body: JSON.stringify({ error: 'Error parsing API into SCSB XML' }),
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
               }
             })
           }
