@@ -12,7 +12,7 @@ console.log('Loading function')
 exports.handler = (event, context, callback) => {
   // console.log('Received event:', JSON.stringify(event, null, 2))
 
-  if ((!event) || (!event.queryStringParameters) || (!event.queryStringParameters.barcode || !event.queryStringParameters.customercode) && (!event.queryStringParameters.bnumber || !event.queryStringParameters.customercode)) {
+  if ((!event || !event.queryStringParameters || (!event.queryStringParameters.barcode || !event.queryStringParameters.customercode)) && (!event.queryStringParameters.bnumber || !event.queryStringParameters.customercode)) {
     context.succeed({
       statusCode: '400',
       body: JSON.stringify({ error: 'Missing barcode and customercode paramaters or bnumber and customercode paramater' }),

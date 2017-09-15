@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/standard --env mocha --globals expect && NODE_ENV=test ./node_modules/.bin/mocha test"
   },
   "author": "matt miller <thisismattmiller@gmail.com> (http://twitter.com/thisismmiller)",
   "license": "ISC",
@@ -13,7 +13,14 @@
     "highland": "^2.10.1",
     "marcjs": "^0.1.13",
     "request": "^2.78.0",
-    "sierra-wrapper": "github:nypl-registry/sierra-wrapper",
+    "sierra-wrapper",
     "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "lambda-tester": "^3.1.0",
+    "mocha": "^3.5.3",
+    "node-lambda": "^0.11.3",
+    "standard": "^10.0.3"
   }
 }

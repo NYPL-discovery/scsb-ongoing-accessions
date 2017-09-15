@@ -106,26 +106,26 @@ H(new marc.Iso2709Reader(fs.createReadStream('data/NYPLTEST.mrc')))
     // console.log(JSON.stringify(record.mij, null, 2))
 
     // <datafield ind1=" " ind2=" " tag="852">
-    // 	<subfield code="a">.i276858591</subfield>
-    // 	<subfield code="b">rcxx2</subfield>
-    // 	<subfield code="h">*ZZ-27060 r. 9</subfield>
-    // 	<subfield code="3">no. 139-180</subfield>
-    // 	<subfield code="y">228</subfield>
+    //   <subfield code="a">.i276858591</subfield>
+    //   <subfield code="b">rcxx2</subfield>
+    //   <subfield code="h">*ZZ-27060 r. 9</subfield>
+    //   <subfield code="3">no. 139-180</subfield>
+    //   <subfield code="y">228</subfield>
     // </datafield>
 
     // <datafield ind1=" " ind2=" " tag="876">
-    // 	<subfield code="a">.i276858591</subfield>
-    // 	<subfield code="j">p</subfield>
-    // 	<subfield code="k">rcxx2</subfield>
-    // 	<subfield code="o">4</subfield>
-    // 	<subfield code="p">33433005774819</subfield>
-    // 	<subfield code="s">228</subfield>
-    // 	<subfield code="t">1</subfield>
-    // 	<subfield code="y">27</subfield>
+    //   <subfield code="a">.i276858591</subfield>
+    //   <subfield code="j">p</subfield>
+    //   <subfield code="k">rcxx2</subfield>
+    //   <subfield code="o">4</subfield>
+    //   <subfield code="p">33433005774819</subfield>
+    //   <subfield code="s">228</subfield>
+    //   <subfield code="t">1</subfield>
+    //   <subfield code="y">27</subfield>
     // </datafield>
 
     // <datafield ind1=" " ind2=" " tag="952">
-    // 	<subfield code="h">JPB 83-155 no. 179</subfield>
+    //   <subfield code="h">JPB 83-155 no. 179</subfield>
     // </datafield>
     // pull out all the data we are going to need
 
