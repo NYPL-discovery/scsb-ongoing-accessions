@@ -1,35 +1,61 @@
-The AWS Lambda for the SCSB ongoing accession end point which transforms Sierra Marc-in-Json format to the SCSB XML format.
+# SCSB Ongoing Accessions Endpoint
 
-To build/test install https://www.npmjs.com/package/node-lambda
+This lambda serves the `/api/v0.1/recap/nypl-bibs` endpoint, which takes a `customerCode` and either a `barcode` or a `bnumber` and returns the identified bib and items formatted as SCSB XML.
 
-Any environmental variables need to be stored in file: deploy.env
+## Initialization
 
-Edit event.json to simulate a event and then test with:
+To initialize a local config to run the lambda:
 
-`node-lambda run --configFile deploy.env`
+ * git clone this repo
+ * `npm i`
+ * `cp config/sample.env config/[environment].env`
+ * Fill in the required details in `config/[environment].env` via a co-worker
 
-When ready to push to AWS you must package the repo:
+Note that `NYPL_OAUTH_SECRET` must be encrypted using KMS.
 
-`node-lambda package --configFile deploy.env`
+To encrypt a plaintext secret:
+ * Look up the account's KMS encryption key ARN:
+   * Log into sandbox if you're encrypting a qa key, nypl-digital-dev if you're encrypting a production key
+   * IAM > Encryption Keys > lambda-default (or 'lambda-rds' in sandbox)
+   * Copy ARN
+ * `AWS_DEFAULT_REGION=us-east-1 aws kms encrypt --key-id "[encryption key arn]" --plaintext "[plaintext secret]"`
 
-Because a module depends on libxmljs we have to use the static library that was compiled on an ec2 amazon linux machine, that precompiled module is in ec2-linux-bindings-libxmljs
+## Run Locally
 
-Once the package is ready (will be in the build directory) you need to replace the libxmljs that was built on your machine and in the .zip with the one found in ec2-linux-bindings-libxmljs. The script `repackage.sh` does this for you, so:
+To run the endpoint as a standalone express server (bound to port 3000), two different scripts are registered in package.json:
 
-`./repackage.sh`
+To run against QA dependencies:
 
-Will do that replacement and clean up the .zip file ready to be uploaded to AWS lambda.
+`npm run run-qa`
 
+To run against Production dependencies:
 
-----
+`npm run run-production`
 
-The event.json would look like:
+## Deploying
 
-```
-{
-    "queryStringParameters": {
-        "barcode": "NYPLTST67896",
-        "customercode": "NA"
-    }
-}
-```
+Two deploy scripts are registered in `package.json`:
+
+`npm run deploy-[qa|production]`
+
+## Testing
+
+The test suite uses [lambda-tester](https://www.npmjs.com/package/lambda-tester) to run tests against the handler interface.
+
+`npm test`
+
+Note that `event.json` contains a sample API Gateway event that can, in theory, be used with `node-lambda` to emulate a lambda invocation locally, but that won't work until `node-lambda` supports `--profile` due to a quirk in aws global credential management. In practice, running the app as a persistent express server via `npm run run-[environment]` feels more natural for local ad hoc testing anyway.
+
+### Test Fixtures
+
+A series of local test fixtures representing responses from the nypl data api, maintained in `./test/data/*.json`. These allow the test suite to run against a fixed set of data. If any fixtures need to be updated or added, a script is provided:
+
+`node scripts/update-test-fixtures [--all|PATH] --envfile config/[environment].env --profile [aws profile]`
+
+For example, to populate a test fixture for the api response for 'bibs/sierra-nypl/123':
+
+`node scripts/update-test-fixtures bibs/sierra-nypl/123 --envfile config/[environment].env --profile [aws profile]`
+
+To update ALL of the test fixtures:
+
+`node scripts/update-test-fixtures --all --envfile config/[environment].env --profile [aws profile]`

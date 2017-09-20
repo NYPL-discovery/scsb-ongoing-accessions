@@ -1,0 +1,87 @@
+const path = require('path')
+const fs = require('fs')
+
+const DataApi = require('../lib/data-api')
+
+// Require certain argv params to establish what environment to serve:
+require('../lib/local-env-helper')
+
+var argv = require('optimist')
+  .argv
+
+function client () {
+  return (new DataApi()).dataApiClient()
+}
+
+function fixturePath (reqPath) {
+  return path.join('./test/data/', encodeURIComponent(reqPath)) + '.json'
+}
+
+function writeFixture (apiPath, data) {
+  // If the response returned by client is an array
+  // if (Array.isArray(data)) data = { '_root_element_to_hold_serialized_array': data }
+
+  return new Promise((resolve, reject) => {
+    fs.writeFile(fixturePath(apiPath), JSON.stringify(data, null, 2), (err, result) => {
+      if (err) reject(err)
+
+      console.log('Wrote ' + fixturePath(apiPath))
+      resolve(result)
+    })
+  })
+}
+
+/**
+ * Fetch given api path and write result to disk as a fixture
+ *
+ * @example
+ * // The following fetches 'bibs/sierra-nypl/11995345/items'
+ * // and writes it to 'test/data/bibs%2Fsierra-nypl%2F11995345%2Fitems.json'
+ * fetchAndWriteFixture('bibs/123/items')
+ */
+function fetchAndWriteFixture (apiPath) {
+  return client().then((client) => {
+    return client.get(apiPath)
+      .then((resp) => {
+        return writeFixture(apiPath, resp)
+      })
+  })
+}
+
+/**
+* Tool for updating fixtures on disk
+*
+* Usage:
+*
+* @example
+* // To update the single text fixture response for 'bibs/123/items':
+* node scripts/update-test-fixtures bibs/123/items --envfile config/[environment].env --profile [aws profile]
+*
+* @example
+* // To update all previously fetched fixtures:
+* node scripts/update-test-fixtures --all --envfile config/[environment].env --profile [aws profile]
+*/
+
+let apiPath = argv._[0]
+if (apiPath) {
+  fetchAndWriteFixture(apiPath)
+    .then((result) => {
+      console.log('Done updating one fixture')
+    })
+}
+
+if (argv.all) {
+  fs.readdir(path.join('./test/data'), (err, paths) => {
+    if (err) console.error(err)
+
+    // Gather all .json paths:
+    let apiPaths = paths
+      .filter((path) => /\.json$/.test(path))
+      .map((path) => decodeURIComponent(path).replace(/\.json$/, ''))
+
+    Promise.all(apiPaths.map((apiPath) => fetchAndWriteFixture(apiPath)))
+      .then((result) => {
+        console.log('Done updating all fixtures')
+      })
+  })
+}
