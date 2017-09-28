@@ -21,7 +21,15 @@ app.get('/api/v0.1/recap/nypl-bibs', (req, res, next) => {
    *  - barcode OR bnumber
    */
 
-  let customerCode = req.query.customerCode
+  let customerCode = ''
+
+  // Preserve backward compatibility for lowercase customer code
+  if (req.query.customercode) {
+    customerCode = req.query.customercode
+  } else {
+    customerCode = req.query.customerCode
+  }
+
   let barcode = req.query.barcode
   let bnumber = req.query.bnumber
 

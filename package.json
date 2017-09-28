@@ -21,7 +21,7 @@
     "@nypl/sierra-wrapper": "^0.2.0",
     "aws-sdk": "^2.118.0",
     "aws-serverless-express": "^3.0.2",
-    "convert-2-scsb-module": "https://github.com/NYPL-discovery/convert-2-scsb-module.git",
+    "convert-2-scsb-module": "https://github.com/NYPL-discovery/convert-2-scsb-module.git#1.0.5",
     "cors": "^2.8.4",
     "express": "^4.15.4",
     "highland": "^2.10.1",
