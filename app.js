@@ -51,7 +51,7 @@ app.get('/api/v0.1/recap/nypl-bibs', (req, res, next) => {
 
   return resolveBibId
     // Get bib & item records:
-    .then((bibId) => dataApi.getBibAndItemsByBibId(bibId))
+    .then((bibId) => dataApi.getBibAndItemsByBibId(bibId, barcode))
     // Format as scsb xml:
     .then((bibAndItems) => {
       let [bib, items] = bibAndItems
