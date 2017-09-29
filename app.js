@@ -32,6 +32,7 @@ app.get('/api/v0.1/recap/nypl-bibs', (req, res, next) => {
 
   let barcode = req.query.barcode
   let bnumber = req.query.bnumber
+  let includeFullBibTree = (req.query.includeFullBibTree === 'true')
 
   if (!customerCode || !(barcode || bnumber)) {
     return handleError(new errors.InvalidParameterError('Missing barcode and customercode paramaters or bnumber and customercode paramater'), req, res)
@@ -51,7 +52,7 @@ app.get('/api/v0.1/recap/nypl-bibs', (req, res, next) => {
 
   return resolveBibId
     // Get bib & item records:
-    .then((bibId) => dataApi.getBibAndItemsByBibId(bibId, barcode))
+    .then((bibId) => dataApi.getBibAndItemsByBibId(bibId, barcode, includeFullBibTree))
     // Format as scsb xml:
     .then((bibAndItems) => {
       let [bib, items] = bibAndItems
