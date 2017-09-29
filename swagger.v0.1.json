@@ -61,7 +61,7 @@
         ],
         "responses": {
           "200": {
-            "description": "SCSB XML"
+            "description": "Response in SCSB XML format"
           },
           "500": {
             "description": "Error message in JSON format"
