@@ -8,17 +8,23 @@ const errors = require('./lib/errors')
 const DataApi = require('./lib/data-api')
 const scsbXmlFormatter = require('./lib/scsb-xml-formatter')
 
+const swaggerDocs = require('./swagger.v0.1.json')
+
 app.use(cors())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
 const dataApi = new DataApi()
+
+app.get('/docs/recap-bibs', function (req, res) {
+  res.send(swaggerDocs)
+})
 
 app.get('/api/v0.1/recap/nypl-bibs', (req, res, next) => {
   /**
    * This endpoint requires the following params set:
    *
    *  - customercode AND
-   *  - barcode OR bnumber
+   *  - barcode OR bibId
    */
 
   let customerCode = ''
@@ -31,21 +37,17 @@ app.get('/api/v0.1/recap/nypl-bibs', (req, res, next) => {
   }
 
   let barcode = req.query.barcode
-  let bnumber = req.query.bnumber
+  let bibId = req.query.bibId
   let includeFullBibTree = (req.query.includeFullBibTree === 'true')
 
-  if (!customerCode || !(barcode || bnumber)) {
-    return handleError(new errors.InvalidParameterError('Missing barcode and customercode paramaters or bnumber and customercode paramater'), req, res)
+  if (!customerCode || !(barcode || bibId)) {
+    return handleError(new errors.InvalidParameterError('Missing barcode and customerCode paramaters or bibId and customerCode parameter'), req, res)
   }
 
   let resolveBibId = null
 
-  // If bnumber given, we can extract bibId from it:
-  if (bnumber) {
-    let bibId = bnumber.replace(/^b/, '')
+  if (bibId) {
     resolveBibId = Promise.resolve(bibId)
-
-  // Otherwise we'll have to look up bnumber by barcode:
   } else {
     resolveBibId = dataApi.getBibIdByBarcode(barcode)
   }
