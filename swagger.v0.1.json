@@ -23,7 +23,7 @@
           "recap"
         ],
         "summary": "Get SCSB XML for a Sierra Bib",
-        "description": "Translate a Sierra Bib and associated items MARC records into ReCAP SCSB XML (see: https://htcrecap.atlassian.net/wiki/spaces/RTG/pages/27691070/XML+Schema)",
+        "description": "Translate a Sierra Bib and associated Items MARC records into ReCAP SCSB XML (see: https://htcrecap.atlassian.net/wiki/spaces/RTG/pages/27691070/XML+Schema)",
         "produces":[
           "text\/xml",
           "application\/json"
