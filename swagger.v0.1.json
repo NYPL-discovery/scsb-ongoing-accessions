@@ -1,0 +1,80 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.1",
+    "title": "ReCAP Bib API",
+    "description": "Translate Sierra MARC bib/item data to ReCAP SCSB XML"
+  },
+  "host": "localhost:3000",
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "tags": [
+    {
+      "name": "recap",
+      "description": "ReCAP API"
+    }
+  ],
+  "paths": {
+    "/v0.1/recap/nypl-bibs": {
+      "get": {
+        "tags": [
+          "recap"
+        ],
+        "summary": "Get SCSB XML for a Sierra Bib",
+        "description": "Translate a Sierra Bib and associated Items MARC records into ReCAP SCSB XML (see: https://htcrecap.atlassian.net/wiki/spaces/RTG/pages/27691070/XML+Schema)",
+        "produces": [
+          "text\/xml",
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerCode",
+            "in": "query",
+            "description": "ReCAP customer code to use for associated Item(s)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "barcode",
+            "in": "query",
+            "description": "Lookup the Bib by an associated Item barcode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bibId",
+            "in": "query",
+            "description": "Lookup the Bib by the Bib ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "includeFullBibTree",
+            "in": "query",
+            "description": "Return the full Bib tree (i.e. all Items) for the Bib",
+            "required": false,
+            "type": "boolean",
+            "default": "false"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response in SCSB XML format"
+          },
+          "500": {
+            "description": "Error message in JSON format"
+          }
+        },
+        "security": [
+          {
+            "api_auth": [
+              "read:bib read:item"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
