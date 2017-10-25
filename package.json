@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "deploy-qa": "./node_modules/.bin/node-lambda deploy -e qa -f ./config/qa.env -b subnet-f4fe56af -g sg-1d544067 --role arn:aws:iam::224280085904:role/lambda_basic_execution --profile nypl-sandbox",
+    "deploy-qa": "./node_modules/.bin/node-lambda deploy -e qa -f ./config/qa.env --role arn:aws:iam::224280085904:role/lambda_basic_execution --profile nypl-sandbox",
     "run-qa": "./node_modules/.bin/nodemon app-local.js --profile nypl-sandbox --envfile config/qa.env",
     "deploy-production": "./node_modules/.bin/node-lambda deploy -e production -f ./config/production.env --role arn:aws:iam::946183545209:role/lambda-full-access --profile nypl-digital-dev",
     "run-production": "./node_modules/.bin/nodemon app-local.js --profile nypl-digital-dev --envfile config/production.env",
