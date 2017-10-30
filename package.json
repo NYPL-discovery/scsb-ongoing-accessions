@@ -1,6 +1,6 @@
 {
   "name": "scsb-ongoing-accessions",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "@nypl/sierra-wrapper": "^0.2.0",
     "aws-sdk": "^2.118.0",
     "aws-serverless-express": "^3.0.2",
-    "convert-2-scsb-module": "https://github.com/NYPL-discovery/convert-2-scsb-module.git#3a891df24f5358c9403b074e60c81291fb1c3516",
+    "convert-2-scsb-module": "https://github.com/NYPL-discovery/convert-2-scsb-module.git#2b8982b9e934d58dd41c05a83c3946ba1cb1f86d",
     "cors": "^2.8.4",
     "express": "^4.15.4",
     "highland": "^2.10.1",
