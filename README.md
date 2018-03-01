@@ -34,6 +34,22 @@ To run against Production dependencies:
 
 ## Deploying
 
+### Logging into EC2
+
+Because of the dependencies in this app, we need to run our deployments from EC2. Get the dev team key and EC2 address from a co-worker, then ... 
+
+`ssh -i path/to/dev-team.pem ec2-user@ec.2.add.ress`
+
+Then change to the directory that you will be running the deployment scripts from. 
+
+`cd /home/ec2-user/temp/scsb-ongoing-accessions`
+
+### Important Notes About convert-2-scsb-module
+
+When there are updates to the convert-2-scsb-module, the module will need to be updated by hand. 
+
+### Running Deploy Scripts
+
 Two deploy scripts are registered in `package.json`:
 
 `npm run deploy-[qa|production]`
