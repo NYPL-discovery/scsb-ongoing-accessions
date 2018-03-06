@@ -34,19 +34,31 @@ To run against Production dependencies:
 
 ## Deploying
 
-### Logging into EC2
+### Logging into EC2 and Setting Things Up
 
-Because of the dependencies in this app, we need to run our deployments from EC2. Get the dev team key and EC2 address from a co-worker, then ... 
+Because of the dependencies in this app, we need to run our deployments from EC2. 
 
-`ssh -i path/to/dev-team.pem ec2-user@ec.2.add.ress`
+To find the ec2 address, log in to the AWS console, and go to EC2 instances. Look for a recent instance that has a public IP you can access with the dgdvteam.pem (ask a coworker). You will likely want to use the instance's private IP to connect. 
+
+`ssh -i path/to/dgdvteam.pem ec2-user@ec.2.add.ress` 
 
 Then change to the directory that you will be running the deployment scripts from. 
 
 `cd /home/ec2-user/temp/scsb-ongoing-accessions`
 
+If this directory doesn't exist, you're in for more fun. Create the temp directory, then cd into it and clone this repo. 
+
+Once cloned, you will need to setup the following: 
+
+* AWS credentials at ~/.aws/credentials (needs two profiles for qa and production deployment, named 'nypl-sandbox' and 'nypl-digital-dev' respectively -- best to get this from a coworker, too)
+* nvm via `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash` ... then reconnect. 
+* node 6.10.3 via `nvm install 6.10.3` , then `nvm use 6.10.3`
+
+Once that's all in place, `npm install` and you should be good to go with deployment. 
+
 ### Important Notes About convert-2-scsb-module
 
-When there are updates to the convert-2-scsb-module, the module will need to be updated by hand. 
+When there are updates to the convert-2-scsb-module, the module will need to be updated by hand. You may need to specify the exact commit / tag from github in order to update it. 
 
 ### Running Deploy Scripts
 
