@@ -76,7 +76,11 @@ function handleError (error, req, res) {
   res.set('Content-Type', 'application/json')
   switch (error.name) {
     case 'InvalidParameterError':
+    case 'NoItemsError':
       status = 400
+      break
+    case 'NotFoundError':
+      status = 404
       break
     case 'NoItemsError':
     case 'ScsbXmlGenerationError':
