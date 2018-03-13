@@ -44,21 +44,23 @@ app.get('/api/v0.1/recap/nypl-bibs', (req, res, next) => {
     return handleError(new errors.InvalidParameterError('Missing barcode and customerCode paramaters or bibId and customerCode parameter'), req, res)
   }
 
-  let resolveBibId = null
+  let resolveBibIds = null
 
   if (bibId) {
-    resolveBibId = Promise.resolve(bibId)
+    resolveBibIds = Promise.resolve(bibId)
   } else {
-    resolveBibId = dataApi.getBibIdByBarcode(barcode)
+    resolveBibIds = dataApi.getBibIdsByBarcode(barcode)
   }
 
-  return resolveBibId
+  return resolveBibIds
     // Get bib & item records:
-    .then((bibId) => dataApi.getBibAndItemsByBibId(bibId, barcode, includeFullBibTree))
+    .then((bibIds) => {
+      return dataApi.getBibsAndItemsByBibId(bibIds, barcode, includeFullBibTree)
+    })
     // Format as scsb xml:
-    .then((bibAndItems) => {
-      let [bib, items] = bibAndItems
-      return scsbXmlFormatter.bibAndItemsToScsbXml(bib, items, customerCode)
+    .then((bibsAndItems) => {
+      let [bibs, items] = bibsAndItems
+      return scsbXmlFormatter.bibsAndItemsToScsbXml(bibs, items, customerCode)
     })
     // Write response:
     .then((scsbXml) => {
