@@ -44,17 +44,9 @@ To find the ec2 address, log in to the AWS console, and go to EC2 instances. Loo
 
 Then change to the directory that you will be running the deployment scripts from. 
 
-`cd /home/ec2-user/temp`
+`cd /home/ec2-user/temp/scsb-ongoing-accessions`
 
 If this directory doesn't exist, you're in for more fun. Create the temp directory, then cd into it and clone this repo. 
-
-It is possible you may also need to install git. If you do, this should work: 
-
-`sudo yum install git`
-
-After cloning the repo, you should finally be able to 
-
-`cd scsb-ongoing-accessions`
 
 Once cloned, you will need to setup the following: 
 
