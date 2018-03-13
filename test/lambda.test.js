@@ -143,7 +143,7 @@ describe('Lambda index handler', function () {
                   return h
                 }, {})
             expect(subfieldsIn876['p']).to.equal('33433047331719')
-            // expect(subfieldsIn876['h']).to.equal('In Library Use') #TODO: Check to make sure this is correct.
+            expect(subfieldsIn876['h']).to.equal('In Library Use')
             expect(subfieldsIn876['j']).to.equal('Available')
 
             // Map subfield values in 900:
@@ -154,7 +154,7 @@ describe('Lambda index handler', function () {
                   h[subfield.$.code] = subfield._
                   return h
                 }, {})
-            // expect(subfieldsIn900['a']).to.equal('Private') #TODO: Check to make sure this is what we want.
+            expect(subfieldsIn900['a']).to.equal('Private')
             expect(subfieldsIn900['b']).to.equal('PL')
 
             resolve()
