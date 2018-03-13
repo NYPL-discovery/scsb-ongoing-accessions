@@ -40,6 +40,7 @@
     "nodemon": "^1.12.1",
     "optimist": "^0.6.1",
     "sinon": "^3.3.0",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "xml2js": "^0.4.19"
   }
 }
