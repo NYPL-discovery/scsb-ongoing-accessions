@@ -82,7 +82,6 @@ function handleError (error, req, res) {
     case 'NotFoundError':
       status = 404
       break
-    case 'NoItemsError':
     case 'ScsbXmlGenerationError':
     default:
       status = 500
