@@ -8,8 +8,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "deploy-qa": "./node_modules/.bin/node-lambda deploy -e qa -f ./config/qa.env --role arn:aws:iam::224280085904:role/lambda_basic_execution --profile nypl-sandbox",
-    "run-qa": "./node_modules/.bin/nodemon app-local.js --profile nypl-sandbox --envfile config/qa.env",
+    "deploy-development": "./node_modules/.bin/node-lambda deploy -e development -f ./config/development.env --role arn:aws:iam::224280085904:role/lambda_basic_execution --profile nypl-sandbox",
+    "run-development": "./node_modules/.bin/nodemon app-local.js --profile nypl-sandbox --envfile config/development.env",
+    "deploy-qa": "./node_modules/.bin/node-lambda deploy -e qa -f ./config/qa.env --role arn:aws:iam::946183545209:role/lambda-full-access --profile nypl-digital-dev",
+    "run-qa": "./node_modules/.bin/nodemon app-local.js --profile nypl-digital-dev --envfile config/qa.env",
     "deploy-production": "./node_modules/.bin/node-lambda deploy -e production -f ./config/production.env --role arn:aws:iam::946183545209:role/lambda-full-access --profile nypl-digital-dev",
     "run-production": "./node_modules/.bin/nodemon app-local.js --profile nypl-digital-dev --envfile config/production.env",
     "test": "./node_modules/.bin/standard --env mocha --globals expect && NODE_ENV=test ./node_modules/.bin/mocha test"

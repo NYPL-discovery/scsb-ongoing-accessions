@@ -22,15 +22,15 @@ To encrypt a plaintext secret:
 
 ## Run Locally
 
-To run the endpoint as a standalone express server (bound to port 3000), two different scripts are registered in package.json:
+To run the endpoint as a standalone express server (bound to port 3000), three different scripts are registered in package.json:
 
-To run against QA dependencies:
+To run against environment dependencies:
 
-`npm run run-qa`
+`npm run run-development` (development)
 
-To run against Production dependencies:
+`npm run run-qa` (qa)
 
-`npm run run-production`
+`npm run run-production` (production)
 
 ## Deploying
 
@@ -58,9 +58,10 @@ After cloning the repo, you should finally be able to
 
 Once cloned, you will need to setup the following: 
 
-* AWS credentials at ~/.aws/credentials (needs two profiles for qa and production deployment, named 'nypl-sandbox' and 'nypl-digital-dev' respectively -- best to get this from a coworker, too)
+* AWS credentials at ~/.aws/credentials (needs two profiles for qa and production deployment, named 'nypl-sandbox' and 'nypl-digital-dev' respectively -- best to get this from a coworker, too. (if you need to upload them from local to aws, use `scp -i path/to-dgdvteam.pem credentials ec2-user@ec.2.add.ress:~/.` then `mv credentials .aws/credentials`)
 * nvm via `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash` ... then reconnect. 
 * node 6.10.3 via `nvm install 6.10.3` , then `nvm use 6.10.3`
+* copy your appropriate config/environment.env file to the server a la your credentails file. .env files are currently not in source control so need to be manually put in place, as well.
 
 Once that's all in place, `npm install` and you should be good to go with deployment. 
 
