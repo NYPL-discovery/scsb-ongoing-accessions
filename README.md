@@ -18,7 +18,7 @@ To encrypt a plaintext secret:
    * Log into sandbox if you're encrypting a qa key, nypl-digital-dev if you're encrypting a production key
    * IAM > Encryption Keys > lambda-default (or 'lambda-rds' in sandbox)
    * Copy ARN
- * `AWS_DEFAULT_REGION=us-east-1 aws kms encrypt --key-id "[encryption key arn]" --plaintext "[plaintext secret]"`
+ * `AWS_DEFAULT_REGION=us-east-1 aws kms encrypt --key-id "[encryption key arn]" --plaintext "[plaintext secret]" --profile nypl-{digital-dev||sandbox}`
 
 ## Run Locally
 
@@ -36,7 +36,7 @@ To run against environment dependencies:
 
 ### Logging into EC2 and Setting Things Up
 
-Because of the dependencies in this app, we need to run our deployments from EC2. 
+Because of the dependencies in this app, we need to run our deployments from EC2. Always run deployments from an EC2 instance on the sandbox account.
 
 To find the ec2 address, log in to the AWS console, and go to EC2 instances. Look for a recent instance that has a public IP you can access with the dgdvteam.pem (ask a coworker). You will likely want to use the instance's private IP to connect. 
 
@@ -63,7 +63,12 @@ Once cloned, you will need to setup the following:
 * node 6.10.3 via `nvm install 6.10.3` , then `nvm use 6.10.3`
 * copy your appropriate config/environment.env file to the server a la your credentails file. .env files are currently not in source control so need to be manually put in place, as well.
 
-Once that's all in place, `npm install` and you should be good to go with deployment. 
+It's also possible you may need to install make. Or gcc. Or a bunch of other things. If you do, maybe these will work. 
+
+`yum install make glibc-devel gcc patch`
+`yum install gcc-c++`
+
+Once that's all in place, `npm install`. If it works, you should be good to go with deployment.
 
 ### Important Notes About convert-2-scsb-module
 
@@ -73,7 +78,10 @@ When there are updates to the convert-2-scsb-module, the module will need to be 
 
 Two deploy scripts are registered in `package.json`:
 
-`npm run deploy-[qa|production]`
+`npm run deploy-[development|qa|production]`
+
+* deploy-development should deploy to nypl-sandbox
+* deploy-qa and deploy-production deploy to nypl-digital-dev
 
 ## Testing
 
