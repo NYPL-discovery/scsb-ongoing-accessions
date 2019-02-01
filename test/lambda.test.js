@@ -26,7 +26,7 @@ describe('Lambda index handler', function () {
 
       // Fail helpfully
       if (!fs.existsSync(diskPath)) {
-        console.error(`Fixture not found; Run node ./scripts/update-test-fixtures "${apiPath}" --envfile config/[environment].env`)
+        console.error(`Fixture not found; Run node ./scripts/update-test-fixtures "${apiPath}" --envfile config/[environment].env --profile [aws profile]`)
         throw new Error('Fixture not found for ' + apiPath)
       }
 
@@ -66,6 +66,34 @@ describe('Lambda index handler', function () {
         expect(body.errorCode).to.be.a('string')
         expect(body.errorCode).to.equal('InvalidParameterError')
         expect(body.statusCode).to.equal(400)
+      })
+  })
+
+  it('should respond with 400 if item found, but not valid for recap', function () {
+    return LambdaTester(handler)
+      .event({ path: '/api/v0.1/recap/nypl-bibs', queryStringParameters: { barcode: '11111111111111', customerCode: 'NA' } })
+      .expectResult((result) => {
+        expect(result.statusCode).to.equal(400)
+        expect(result.body).to.be.a('string')
+
+        const body = JSON.parse(result.body)
+        expect(body).to.be.a('object')
+        expect(body.statusCode).to.equal(400)
+        expect(body.error).to.equal('SCSB XML Formatter determined that no items were suitable for export to Recap')
+      })
+  })
+
+  it('should respond with 404 if item not found in ItemService', function () {
+    return LambdaTester(handler)
+      .event({ path: '/api/v0.1/recap/nypl-bibs', queryStringParameters: { barcode: '1234567891011', customerCode: 'NA' } })
+      .expectResult((result) => {
+        expect(result.statusCode).to.equal(404)
+        expect(result.body).to.be.a('string')
+
+        const body = JSON.parse(result.body)
+        expect(body).to.be.a('object')
+        expect(body.statusCode).to.equal(404)
+        expect(body.error).to.equal('Barcode not found in ItemService')
       })
   })
 

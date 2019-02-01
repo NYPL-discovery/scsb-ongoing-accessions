@@ -1,0 +1,155 @@
+{
+  "data": {
+    "id": "20836018",
+    "nyplSource": "sierra-nypl",
+    "nyplType": "bib",
+    "updatedDate": "2016-01-22T05:20:40-05:00",
+    "createdDate": "2015-11-13T16:47:28-05:00",
+    "deletedDate": null,
+    "deleted": false,
+    "locations": [
+      {
+        "code": "pkj",
+        "name": "Parkchester Children"
+      },
+      {
+        "code": "pmj",
+        "name": "Pelham Bay Children"
+      },
+      {
+        "code": "svj",
+        "name": "Soundview Children"
+      },
+      {
+        "code": "wtj",
+        "name": "Westchester Square Children"
+      }
+    ],
+    "suppressed": true,
+    "lang": {
+      "code": "eng",
+      "name": "English"
+    },
+    "title": "",
+    "author": "",
+    "materialType": {
+      "code": "a",
+      "value": "BOOK/TEXT"
+    },
+    "bibLevel": {
+      "code": "m",
+      "value": "MONOGRAPH"
+    },
+    "publishYear": null,
+    "catalogDate": "2016-01-18",
+    "country": {
+      "code": "mnu",
+      "name": "Minnesota"
+    },
+    "normTitle": "",
+    "normAuthor": "",
+    "standardNumbers": [],
+    "controlNumber": "",
+    "fixedFields": {
+      "24": {
+        "label": "Language",
+        "value": "eng",
+        "display": "English"
+      },
+      "25": {
+        "label": "Skip",
+        "value": "0",
+        "display": null
+      },
+      "26": {
+        "label": "Location",
+        "value": "multi",
+        "display": null
+      },
+      "27": {
+        "label": "COPIES",
+        "value": "4",
+        "display": null
+      },
+      "28": {
+        "label": "Cat. Date",
+        "value": "2016-01-18",
+        "display": null
+      },
+      "29": {
+        "label": "Bib Level",
+        "value": "m",
+        "display": "MONOGRAPH"
+      },
+      "30": {
+        "label": "Material Type",
+        "value": "a",
+        "display": "BOOK/TEXT"
+      },
+      "31": {
+        "label": "Bib Code 3",
+        "value": "d",
+        "display": null
+      },
+      "80": {
+        "label": "Record Type",
+        "value": "b",
+        "display": null
+      },
+      "81": {
+        "label": "Record Number",
+        "value": "20836018",
+        "display": null
+      },
+      "83": {
+        "label": "Created Date",
+        "value": "2015-11-13T16:47:28Z",
+        "display": null
+      },
+      "84": {
+        "label": "Updated Date",
+        "value": "2016-01-22T05:20:40Z",
+        "display": null
+      },
+      "85": {
+        "label": "No. of Revisions",
+        "value": "4",
+        "display": null
+      },
+      "86": {
+        "label": "Agency",
+        "value": "1",
+        "display": null
+      },
+      "89": {
+        "label": "Country",
+        "value": "mnu",
+        "display": "Minnesota"
+      },
+      "98": {
+        "label": "PDATE",
+        "value": "2016-01-21T15:25:41Z",
+        "display": null
+      },
+      "107": {
+        "label": "MARC Type",
+        "value": " ",
+        "display": null
+      }
+    },
+    "varFields": [
+      {
+        "fieldTag": "_",
+        "marcTag": null,
+        "ind1": null,
+        "ind2": null,
+        "content": "00000cam  2200589 i 4500",
+        "subfields": null
+      }
+    ]
+  },
+  "count": 1,
+  "totalCount": 0,
+  "statusCode": 200,
+  "debugInfo": []
+}

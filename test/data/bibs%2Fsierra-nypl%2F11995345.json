@@ -1,515 +1,523 @@
 {
-  "id": "11995345",
-  "nyplSource": "sierra-nypl",
-  "nyplType": "bib",
-  "updatedDate": "2014-01-15T02:45:04-05:00",
-  "createdDate": "2008-12-15T15:06:24-05:00",
-  "deletedDate": null,
-  "deleted": false,
-  "locations": [
-    {
-      "code": "mym",
-      "name": "Performing Arts Research Collections - Music"
-    }
-  ],
-  "suppressed": false,
-  "lang": {
-    "code": "eng",
-    "name": "English"
+  "data": {
+    "id": "11995345",
+    "nyplSource": "sierra-nypl",
+    "nyplType": "bib",
+    "updatedDate": "2014-01-15T02:45:04-05:00",
+    "createdDate": "2008-12-15T15:06:24-05:00",
+    "deletedDate": null,
+    "deleted": false,
+    "locations": [
+      {
+        "code": "mym",
+        "name": "Performing Arts Research Collections - Music"
+      }
+    ],
+    "suppressed": false,
+    "lang": {
+      "code": "eng",
+      "name": "English"
+    },
+    "title": "1974 supplement to Top 10's and trivia of rock & roll and rhythm & blues, 1950-1973",
+    "author": "Edwards, Joseph, 1946-",
+    "materialType": {
+      "code": "a",
+      "value": "BOOK/TEXT"
+    },
+    "bibLevel": {
+      "code": "m",
+      "value": "MONOGRAPH"
+    },
+    "publishYear": 1974,
+    "catalogDate": "2000-10-31",
+    "country": {
+      "code": "mou",
+      "name": "Missouri"
+    },
+    "normTitle": "1974 supplement to top 10s and trivia of rock and roll and rhythm and blues 1950 1973",
+    "normAuthor": "edwards joseph 1946",
+    "standardNumbers": [],
+    "controlNumber": "NYPG94-B39445",
+    "fixedFields": {
+      "24": {
+        "label": "Language",
+        "value": "eng",
+        "display": "English"
+      },
+      "25": {
+        "label": "Skip",
+        "value": "0",
+        "display": null
+      },
+      "26": {
+        "label": "Location",
+        "value": "mym  ",
+        "display": "Performing Arts Research Collections - Music"
+      },
+      "27": {
+        "label": "COPIES",
+        "value": "1",
+        "display": null
+      },
+      "28": {
+        "label": "Cat. Date",
+        "value": "2000-10-31",
+        "display": null
+      },
+      "29": {
+        "label": "Bib Level",
+        "value": "m",
+        "display": "MONOGRAPH"
+      },
+      "30": {
+        "label": "Material Type",
+        "value": "a",
+        "display": "BOOK/TEXT"
+      },
+      "31": {
+        "label": "Bib Code 3",
+        "value": "-",
+        "display": null
+      },
+      "80": {
+        "label": "Record Type",
+        "value": "b",
+        "display": null
+      },
+      "81": {
+        "label": "Record Number",
+        "value": "11995345",
+        "display": null
+      },
+      "83": {
+        "label": "Created Date",
+        "value": "2008-12-15T15:06:24Z",
+        "display": null
+      },
+      "84": {
+        "label": "Updated Date",
+        "value": "2014-01-15T02:45:04Z",
+        "display": null
+      },
+      "85": {
+        "label": "No. of Revisions",
+        "value": "5",
+        "display": null
+      },
+      "86": {
+        "label": "Agency",
+        "value": "1",
+        "display": null
+      },
+      "89": {
+        "label": "Country",
+        "value": "mou",
+        "display": "Missouri"
+      },
+      "98": {
+        "label": "PDATE",
+        "value": "2009-06-27T22:00:16Z",
+        "display": null
+      },
+      "107": {
+        "label": "MARC Type",
+        "value": " ",
+        "display": null
+      }
+    },
+    "varFields": [
+      {
+        "fieldTag": "a",
+        "marcTag": "100",
+        "ind1": "1",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "Edwards, Joseph,"
+          },
+          {
+            "tag": "d",
+            "content": "1946-"
+          }
+        ]
+      },
+      {
+        "fieldTag": "b",
+        "marcTag": "791",
+        "ind1": "2",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "American Music Collection."
+          }
+        ]
+      },
+      {
+        "fieldTag": "c",
+        "marcTag": "852",
+        "ind1": "8",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "h",
+            "content": "JND 94-72 no. 1"
+          }
+        ]
+      },
+      {
+        "fieldTag": "d",
+        "marcTag": "650",
+        "ind1": " ",
+        "ind2": "0",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "Rhythm and blues music"
+          },
+          {
+            "tag": "v",
+            "content": "Chronology."
+          }
+        ]
+      },
+      {
+        "fieldTag": "d",
+        "marcTag": "650",
+        "ind1": " ",
+        "ind2": "0",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "Rock music"
+          },
+          {
+            "tag": "z",
+            "content": "United States"
+          },
+          {
+            "tag": "v",
+            "content": "Chronology."
+          }
+        ]
+      },
+      {
+        "fieldTag": "d",
+        "marcTag": "650",
+        "ind1": " ",
+        "ind2": "0",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "Rhythm and blues music"
+          },
+          {
+            "tag": "v",
+            "content": "Discography."
+          }
+        ]
+      },
+      {
+        "fieldTag": "d",
+        "marcTag": "650",
+        "ind1": " ",
+        "ind2": "0",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "Rock music"
+          },
+          {
+            "tag": "z",
+            "content": "United States"
+          },
+          {
+            "tag": "v",
+            "content": "Discography."
+          }
+        ]
+      },
+      {
+        "fieldTag": "l",
+        "marcTag": "035",
+        "ind1": " ",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "(WaOLN)nyp1984410"
+          }
+        ]
+      },
+      {
+        "fieldTag": "l",
+        "marcTag": "947",
+        "ind1": " ",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "*R-Music 79-1204 Suppl. (Former classmark)"
+          }
+        ]
+      },
+      {
+        "fieldTag": "n",
+        "marcTag": "504",
+        "ind1": " ",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "Discography: p. 19-35."
+          }
+        ]
+      },
+      {
+        "fieldTag": "o",
+        "marcTag": "001",
+        "ind1": " ",
+        "ind2": " ",
+        "content": "NYPG94-B39445",
+        "subfields": null
+      },
+      {
+        "fieldTag": "p",
+        "marcTag": "260",
+        "ind1": " ",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "St. Louis :"
+          },
+          {
+            "tag": "b",
+            "content": "Blueberry Hill,"
+          },
+          {
+            "tag": "c",
+            "content": "c1974."
+          }
+        ]
+      },
+      {
+        "fieldTag": "q",
+        "marcTag": "852",
+        "ind1": "8",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "h",
+            "content": "JND 94-72 no. 1"
+          }
+        ]
+      },
+      {
+        "fieldTag": "r",
+        "marcTag": "300",
+        "ind1": " ",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "35 p. ;"
+          },
+          {
+            "tag": "c",
+            "content": "23 cm."
+          }
+        ]
+      },
+      {
+        "fieldTag": "t",
+        "marcTag": "245",
+        "ind1": "1",
+        "ind2": "0",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "1974 supplement to Top 10's and trivia of rock & roll and rhythm & blues, 1950-1973 /"
+          },
+          {
+            "tag": "c",
+            "content": "by Joseph Edwards."
+          }
+        ]
+      },
+      {
+        "fieldTag": "u",
+        "marcTag": "740",
+        "ind1": "0",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "Top 10's and trivia of rock & roll and rhythm & blues."
+          }
+        ]
+      },
+      {
+        "fieldTag": "u",
+        "marcTag": "740",
+        "ind1": "0",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "Top tens and trivia of rock and roll and rhythm and blues."
+          }
+        ]
+      },
+      {
+        "fieldTag": "v",
+        "marcTag": "959",
+        "ind1": " ",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": ".b34409816"
+          },
+          {
+            "tag": "b",
+            "content": "02-20-08"
+          },
+          {
+            "tag": "c",
+            "content": "01-19-95"
+          }
+        ]
+      },
+      {
+        "fieldTag": "y",
+        "marcTag": "003",
+        "ind1": " ",
+        "ind2": " ",
+        "content": "CStRLIN",
+        "subfields": null
+      },
+      {
+        "fieldTag": "y",
+        "marcTag": "005",
+        "ind1": " ",
+        "ind2": " ",
+        "content": "20000629182859.0",
+        "subfields": null
+      },
+      {
+        "fieldTag": "y",
+        "marcTag": "008",
+        "ind1": " ",
+        "ind2": " ",
+        "content": "941202s1974    mou      k    000 0 eng dcam a ",
+        "subfields": null
+      },
+      {
+        "fieldTag": "y",
+        "marcTag": "040",
+        "ind1": " ",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "NN"
+          },
+          {
+            "tag": "c",
+            "content": "NN"
+          },
+          {
+            "tag": "d",
+            "content": "WaOLN"
+          }
+        ]
+      },
+      {
+        "fieldTag": "y",
+        "marcTag": "043",
+        "ind1": " ",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "n-us---"
+          }
+        ]
+      },
+      {
+        "fieldTag": "y",
+        "marcTag": "997",
+        "ind1": " ",
+        "ind2": " ",
+        "content": null,
+        "subfields": [
+          {
+            "tag": "a",
+            "content": "pm"
+          },
+          {
+            "tag": "b",
+            "content": "10-31-00"
+          },
+          {
+            "tag": "c",
+            "content": "m"
+          },
+          {
+            "tag": "d",
+            "content": "a"
+          },
+          {
+            "tag": "e",
+            "content": "-"
+          },
+          {
+            "tag": "f",
+            "content": "eng"
+          },
+          {
+            "tag": "g",
+            "content": "mou"
+          },
+          {
+            "tag": "h",
+            "content": "0"
+          }
+        ]
+      },
+      {
+        "fieldTag": "_",
+        "marcTag": null,
+        "ind1": null,
+        "ind2": null,
+        "content": "00000cam  2200301 a 4500",
+        "subfields": null
+      }
+    ]
   },
-  "title": "1974 supplement to Top 10's and trivia of rock & roll and rhythm & blues, 1950-1973",
-  "author": "Edwards, Joseph, 1946-",
-  "materialType": {
-    "code": "a",
-    "value": "BOOK/TEXT"
-  },
-  "bibLevel": {
-    "code": "m",
-    "value": "MONOGRAPH"
-  },
-  "publishYear": 1974,
-  "catalogDate": "2000-10-31",
-  "country": {
-    "code": "mou",
-    "name": "Missouri"
-  },
-  "normTitle": "1974 supplement to top 10s and trivia of rock and roll and rhythm and blues 1950 1973",
-  "normAuthor": "edwards joseph 1946",
-  "fixedFields": {
-    "24": {
-      "label": "Language",
-      "value": "eng",
-      "display": "English"
-    },
-    "25": {
-      "label": "Skip",
-      "value": "0",
-      "display": null
-    },
-    "26": {
-      "label": "Location",
-      "value": "mym  ",
-      "display": "Performing Arts Research Collections - Music"
-    },
-    "27": {
-      "label": "COPIES",
-      "value": "1",
-      "display": null
-    },
-    "28": {
-      "label": "Cat. Date",
-      "value": "2000-10-31",
-      "display": null
-    },
-    "29": {
-      "label": "Bib Level",
-      "value": "m",
-      "display": "MONOGRAPH"
-    },
-    "30": {
-      "label": "Material Type",
-      "value": "a",
-      "display": "BOOK/TEXT"
-    },
-    "31": {
-      "label": "Bib Code 3",
-      "value": "-",
-      "display": null
-    },
-    "80": {
-      "label": "Record Type",
-      "value": "b",
-      "display": null
-    },
-    "81": {
-      "label": "Record Number",
-      "value": "11995345",
-      "display": null
-    },
-    "83": {
-      "label": "Created Date",
-      "value": "2008-12-15T15:06:24Z",
-      "display": null
-    },
-    "84": {
-      "label": "Updated Date",
-      "value": "2014-01-15T02:45:04Z",
-      "display": null
-    },
-    "85": {
-      "label": "No. of Revisions",
-      "value": "5",
-      "display": null
-    },
-    "86": {
-      "label": "Agency",
-      "value": "1",
-      "display": null
-    },
-    "89": {
-      "label": "Country",
-      "value": "mou",
-      "display": "Missouri"
-    },
-    "98": {
-      "label": "PDATE",
-      "value": "2009-06-27T22:00:16Z",
-      "display": null
-    },
-    "107": {
-      "label": "MARC Type",
-      "value": " ",
-      "display": null
-    }
-  },
-  "varFields": [
-    {
-      "fieldTag": "a",
-      "marcTag": "100",
-      "ind1": "1",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "Edwards, Joseph,"
-        },
-        {
-          "tag": "d",
-          "content": "1946-"
-        }
-      ]
-    },
-    {
-      "fieldTag": "b",
-      "marcTag": "791",
-      "ind1": "2",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "American Music Collection."
-        }
-      ]
-    },
-    {
-      "fieldTag": "c",
-      "marcTag": "852",
-      "ind1": "8",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "h",
-          "content": "JND 94-72 no. 1"
-        }
-      ]
-    },
-    {
-      "fieldTag": "d",
-      "marcTag": "650",
-      "ind1": " ",
-      "ind2": "0",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "Rhythm and blues music"
-        },
-        {
-          "tag": "v",
-          "content": "Chronology."
-        }
-      ]
-    },
-    {
-      "fieldTag": "d",
-      "marcTag": "650",
-      "ind1": " ",
-      "ind2": "0",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "Rock music"
-        },
-        {
-          "tag": "z",
-          "content": "United States"
-        },
-        {
-          "tag": "v",
-          "content": "Chronology."
-        }
-      ]
-    },
-    {
-      "fieldTag": "d",
-      "marcTag": "650",
-      "ind1": " ",
-      "ind2": "0",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "Rhythm and blues music"
-        },
-        {
-          "tag": "v",
-          "content": "Discography."
-        }
-      ]
-    },
-    {
-      "fieldTag": "d",
-      "marcTag": "650",
-      "ind1": " ",
-      "ind2": "0",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "Rock music"
-        },
-        {
-          "tag": "z",
-          "content": "United States"
-        },
-        {
-          "tag": "v",
-          "content": "Discography."
-        }
-      ]
-    },
-    {
-      "fieldTag": "l",
-      "marcTag": "035",
-      "ind1": " ",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "(WaOLN)nyp1984410"
-        }
-      ]
-    },
-    {
-      "fieldTag": "l",
-      "marcTag": "947",
-      "ind1": " ",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "*R-Music 79-1204 Suppl. (Former classmark)"
-        }
-      ]
-    },
-    {
-      "fieldTag": "n",
-      "marcTag": "504",
-      "ind1": " ",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "Discography: p. 19-35."
-        }
-      ]
-    },
-    {
-      "fieldTag": "o",
-      "marcTag": "001",
-      "ind1": " ",
-      "ind2": " ",
-      "content": "NYPG94-B39445",
-      "subfields": null
-    },
-    {
-      "fieldTag": "p",
-      "marcTag": "260",
-      "ind1": " ",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "St. Louis :"
-        },
-        {
-          "tag": "b",
-          "content": "Blueberry Hill,"
-        },
-        {
-          "tag": "c",
-          "content": "c1974."
-        }
-      ]
-    },
-    {
-      "fieldTag": "q",
-      "marcTag": "852",
-      "ind1": "8",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "h",
-          "content": "JND 94-72 no. 1"
-        }
-      ]
-    },
-    {
-      "fieldTag": "r",
-      "marcTag": "300",
-      "ind1": " ",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "35 p. ;"
-        },
-        {
-          "tag": "c",
-          "content": "23 cm."
-        }
-      ]
-    },
-    {
-      "fieldTag": "t",
-      "marcTag": "245",
-      "ind1": "1",
-      "ind2": "0",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "1974 supplement to Top 10's and trivia of rock & roll and rhythm & blues, 1950-1973 /"
-        },
-        {
-          "tag": "c",
-          "content": "by Joseph Edwards."
-        }
-      ]
-    },
-    {
-      "fieldTag": "u",
-      "marcTag": "740",
-      "ind1": "0",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "Top 10's and trivia of rock & roll and rhythm & blues."
-        }
-      ]
-    },
-    {
-      "fieldTag": "u",
-      "marcTag": "740",
-      "ind1": "0",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "Top tens and trivia of rock and roll and rhythm and blues."
-        }
-      ]
-    },
-    {
-      "fieldTag": "v",
-      "marcTag": "959",
-      "ind1": " ",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": ".b34409816"
-        },
-        {
-          "tag": "b",
-          "content": "02-20-08"
-        },
-        {
-          "tag": "c",
-          "content": "01-19-95"
-        }
-      ]
-    },
-    {
-      "fieldTag": "y",
-      "marcTag": "003",
-      "ind1": " ",
-      "ind2": " ",
-      "content": "CStRLIN",
-      "subfields": null
-    },
-    {
-      "fieldTag": "y",
-      "marcTag": "005",
-      "ind1": " ",
-      "ind2": " ",
-      "content": "20000629182859.0",
-      "subfields": null
-    },
-    {
-      "fieldTag": "y",
-      "marcTag": "008",
-      "ind1": " ",
-      "ind2": " ",
-      "content": "941202s1974    mou      k    000 0 eng dcam a ",
-      "subfields": null
-    },
-    {
-      "fieldTag": "y",
-      "marcTag": "040",
-      "ind1": " ",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "NN"
-        },
-        {
-          "tag": "c",
-          "content": "NN"
-        },
-        {
-          "tag": "d",
-          "content": "WaOLN"
-        }
-      ]
-    },
-    {
-      "fieldTag": "y",
-      "marcTag": "043",
-      "ind1": " ",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "n-us---"
-        }
-      ]
-    },
-    {
-      "fieldTag": "y",
-      "marcTag": "997",
-      "ind1": " ",
-      "ind2": " ",
-      "content": null,
-      "subfields": [
-        {
-          "tag": "a",
-          "content": "pm"
-        },
-        {
-          "tag": "b",
-          "content": "10-31-00"
-        },
-        {
-          "tag": "c",
-          "content": "m"
-        },
-        {
-          "tag": "d",
-          "content": "a"
-        },
-        {
-          "tag": "e",
-          "content": "-"
-        },
-        {
-          "tag": "f",
-          "content": "eng"
-        },
-        {
-          "tag": "g",
-          "content": "mou"
-        },
-        {
-          "tag": "h",
-          "content": "0"
-        }
-      ]
-    },
-    {
-      "fieldTag": "_",
-      "marcTag": null,
-      "ind1": null,
-      "ind2": null,
-      "content": "00000cam  2200301 a 4500",
-      "subfields": null
-    }
-  ]
+  "count": 1,
+  "totalCount": 0,
+  "statusCode": 200,
+  "debugInfo": []
 }
