@@ -1,9 +1,4 @@
-event.json
 build/*
 node_modules
 .DS_Store
-
-# AWS Lambda credentials
-config/qa.env
-config/production.env
 .lambda

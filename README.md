@@ -95,12 +95,12 @@ Note that `event.json` contains a sample API Gateway event that can, in theory, 
 
 A series of local test fixtures representing responses from the nypl data api, maintained in `./test/data/*.json`. These allow the test suite to run against a fixed set of data. If any fixtures need to be updated or added, a script is provided:
 
-`node scripts/update-test-fixtures [--all|PATH] --envfile config/[environment].env --profile [aws profile]`
+`./scripts/update-test-fixtures [--all|PATH] --envfile config/[environment].env --profile [aws profile]`
 
 For example, to populate a test fixture for the api response for 'bibs/sierra-nypl/123':
 
-`node scripts/update-test-fixtures bibs/sierra-nypl/123 --envfile config/[environment].env --profile [aws profile]`
+`./scripts/update-test-fixtures bibs/sierra-nypl/123 --envfile config/[environment].env --profile [aws profile]`
 
 To update ALL of the test fixtures:
 
-`node scripts/update-test-fixtures --all --envfile config/[environment].env --profile [aws profile]`
+`./scripts/update-test-fixtures --all --envfile config/[environment].env --profile [aws profile]`

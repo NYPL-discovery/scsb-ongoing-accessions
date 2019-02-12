@@ -3,25 +3,25 @@
     {
       "nyplSource": "sierra-nypl",
       "bibIds": [
-        "11995345"
+        "20836018"
       ],
-      "id": "14211097",
+      "id": "33663319",
       "nyplType": "item",
-      "updatedDate": "2014-08-01T00:06:52-04:00",
-      "createdDate": "2009-02-09T02:47:08-05:00",
+      "updatedDate": "2018-07-20T01:16:38-04:00",
+      "createdDate": "2016-01-21T15:25:00-05:00",
       "deletedDate": null,
       "deleted": false,
       "location": {
-        "code": "rcpm2",
-        "name": "OFFSITE - Request in Advance for use at Performing Arts"
+        "code": "pkj0n",
+        "name": "Parkchester Children's Non-Fiction"
       },
       "status": {
-        "code": "-",
-        "display": "AVAILABLE",
+        "code": "w",
+        "display": "WITHDRAWN",
         "duedate": null
       },
-      "barcode": "33433047331719",
-      "callNumber": "|hJND 94-72 no. 1",
+      "barcode": "11111111111111",
+      "callNumber": null,
       "itemType": null,
       "fixedFields": {
         "57": {
@@ -41,32 +41,32 @@
         },
         "60": {
           "label": "Item Code 2",
-          "value": "-",
+          "value": "s",
           "display": null
         },
         "61": {
           "label": "Item Type",
-          "value": "55",
-          "display": null
+          "value": "201",
+          "display": "J book"
         },
         "62": {
           "label": "Price",
-          "value": 0,
+          "value": 1995,
           "display": null
         },
         "64": {
           "label": "Checkout Location",
-          "value": 0,
+          "value": 21,
           "display": null
         },
-        "69": {
-          "label": "Inventory Date",
-          "value": "2014-06-01T08:00:00Z",
+        "68": {
+          "label": "Last Checkin",
+          "value": "2016-11-01T20:59:34Z",
           "display": null
         },
         "70": {
           "label": "Checkin Location",
-          "value": 0,
+          "value": 6,
           "display": null
         },
         "74": {
@@ -76,18 +76,23 @@
         },
         "76": {
           "label": "Total Checkouts",
-          "value": 1,
+          "value": 3,
           "display": null
         },
         "77": {
           "label": "Total Renewals",
-          "value": 0,
+          "value": 1,
+          "display": null
+        },
+        "78": {
+          "label": "Last Checkout Date",
+          "value": "2016-09-16T20:35:07Z",
           "display": null
         },
         "79": {
           "label": "Location",
-          "value": "rcpm2",
-          "display": "OFFSITE - Request in Advance for use at Performing Arts"
+          "value": "pkj0n",
+          "display": "Parkchester Children's Non-Fiction"
         },
         "80": {
           "label": "Record Type",
@@ -96,22 +101,22 @@
         },
         "81": {
           "label": "Record Number",
-          "value": "14211097",
+          "value": "33663319",
           "display": null
         },
         "83": {
           "label": "Created Date",
-          "value": "2009-02-09T02:47:08Z",
+          "value": "2016-01-21T15:25:00Z",
           "display": null
         },
         "84": {
           "label": "Updated Date",
-          "value": "2014-08-01T00:06:52Z",
+          "value": "2018-07-20T01:16:38Z",
           "display": null
         },
         "85": {
           "label": "No. of Revisions",
-          "value": "14",
+          "value": "18",
           "display": null
         },
         "86": {
@@ -121,8 +126,8 @@
         },
         "88": {
           "label": "Status",
-          "value": "-",
-          "display": "AVAILABLE"
+          "value": "w",
+          "display": "WITHDRAWN"
         },
         "93": {
           "label": "Inhouse Use",
@@ -141,12 +146,12 @@
         },
         "98": {
           "label": "PDATE",
-          "value": "2014-07-31T18:00:12Z",
+          "value": "2017-08-22T14:36:41Z",
           "display": null
         },
         "108": {
           "label": "OPAC Message",
-          "value": "2",
+          "value": "-",
           "display": null
         },
         "109": {
@@ -161,8 +166,8 @@
         },
         "127": {
           "label": "Item Agency",
-          "value": "221",
-          "display": "ReCAP (NP) - LPA Restricted"
+          "value": "0",
+          "display": "Undefined"
         },
         "161": {
           "label": "VI Central",
@@ -187,118 +192,20 @@
       },
       "varFields": [
         {
-          "fieldTag": "a",
-          "marcTag": "949",
-          "ind1": " ",
-          "ind2": " ",
-          "content": null,
-          "subfields": [
-            {
-              "tag": "a",
-              "content": "JND 94-72 no.1"
-            },
-            {
-              "tag": "c",
-              "content": "33433047331719"
-            },
-            {
-              "tag": "h",
-              "content": "1"
-            },
-            {
-              "tag": "i",
-              "content": "0"
-            },
-            {
-              "tag": "j",
-              "content": "-"
-            },
-            {
-              "tag": "k",
-              "content": "2"
-            },
-            {
-              "tag": "l",
-              "content": "$0.00"
-            },
-            {
-              "tag": "m",
-              "content": "0"
-            },
-            {
-              "tag": "n",
-              "content": "1"
-            },
-            {
-              "tag": "o",
-              "content": "0"
-            },
-            {
-              "tag": "p",
-              "content": "rcp  "
-            },
-            {
-              "tag": "q",
-              "content": "-"
-            },
-            {
-              "tag": "r",
-              "content": "0"
-            },
-            {
-              "tag": "s",
-              "content": "0"
-            },
-            {
-              "tag": "t",
-              "content": "-"
-            },
-            {
-              "tag": "u",
-              "content": "-"
-            },
-            {
-              "tag": "v",
-              "content": "1"
-            },
-            {
-              "tag": "w",
-              "content": "0"
-            },
-            {
-              "tag": "x",
-              "content": ".i51257610"
-            },
-            {
-              "tag": "y",
-              "content": "11-25-03"
-            },
-            {
-              "tag": "z",
-              "content": "07-03-08"
-            }
-          ]
-        },
-        {
           "fieldTag": "b",
           "marcTag": null,
           "ind1": null,
           "ind2": null,
-          "content": "33433047331719",
+          "content": "11111111111111",
           "subfields": null
         },
         {
-          "fieldTag": "c",
-          "marcTag": "852",
-          "ind1": "8",
-          "ind2": " ",
-          "content": null,
-          "subfields": [
-            {
-              "tag": "h",
-              "content": "JND 94-72 no. 1"
-            }
-          ]
+          "fieldTag": "t",
+          "marcTag": null,
+          "ind1": null,
+          "ind2": null,
+          "content": "CPRC/iv",
+          "subfields": null
         }
       ]
     }

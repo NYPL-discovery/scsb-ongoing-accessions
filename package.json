@@ -27,18 +27,18 @@
     "cors": "^2.8.4",
     "express": "^4.15.4",
     "highland": "^2.10.1",
+    "libxmljs": "0.18.0",
     "marcjs": "^0.1.13",
     "pryjs": "^1.0.3",
     "request": "^2.78.0",
+    "touch": "1.0.0",
     "winston": "^2.3.1",
-    "xml2js": "^0.4.19",
-    "libxmljs": "0.18.0",
-    "touch": "1.0.0"
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "dotenv": "^4.0.0",
-    "lambda-tester": "^3.1.0",
+    "lambda-tester": "~3.1.0",
     "mocha": "^3.5.3",
     "node-lambda": "^0.11.3",
     "nodemon": "^1.12.1",
