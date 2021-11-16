@@ -21,7 +21,7 @@
   "dependencies": {
     "@nypl/nypl-data-api-client": "^1.0.0",
     "@nypl/sierra-wrapper": "^0.2.0",
-    "aws-sdk": "^2.118.0",
+    "aws-sdk": "^2.814.0",
     "aws-serverless-express": "^3.0.2",
     "convert-2-scsb-module": "https://github.com/NYPL-discovery/convert-2-scsb-module.git#2b8982b9e934d58dd41c05a83c3946ba1cb1f86d",
     "cors": "^2.8.4",
