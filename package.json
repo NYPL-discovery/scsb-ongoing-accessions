@@ -23,14 +23,12 @@
     "@nypl/sierra-wrapper": "^0.2.0",
     "aws-sdk": "^2.118.0",
     "aws-serverless-express": "^3.0.2",
-    "convert-2-scsb-module": "https://github.com/NYPL-discovery/convert-2-scsb-module.git#2b8982b9e934d58dd41c05a83c3946ba1cb1f86d",
     "cors": "^2.8.4",
     "express": "^4.15.4",
     "highland": "^2.10.1",
-    "libxmljs": "0.18.0",
-    "marcjs": "^0.1.13",
+    "marcjs": "2.0.1",
+    "node-gyp": "^10.2.0",
     "pryjs": "^1.0.3",
-    "request": "^2.78.0",
     "touch": "1.0.0",
     "winston": "^2.3.1",
     "xml2js": "^0.4.19"
@@ -38,12 +36,10 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "dotenv": "^4.0.0",
-    "lambda-tester": "~3.1.0",
-    "mocha": "^3.5.3",
-    "node-lambda": "^0.11.3",
+    "lambda-tester": "4.0.1",
+    "mocha": "10.7.0",
     "nodemon": "^1.12.1",
-    "optimist": "^0.6.1",
-    "sinon": "^3.3.0",
-    "standard": "^10.0.3"
+    "sinon": "18.0.0",
+    "standard": "17.1.0"
   }
 }

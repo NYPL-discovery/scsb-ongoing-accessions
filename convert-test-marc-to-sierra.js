@@ -1,14 +1,14 @@
-const convert2Scsb = require('convert-2-scsb-module')
+const convert2Scsb = require('./lib/convert-2-scsb-module')
 const H = require('highland')
 const marc = require('marcjs')
 const fs = require('fs')
 const xml2js = require('xml2js')
-const builder = new xml2js.Builder({renderOpts: {pretty: false}, headless: true})
+const builder = new xml2js.Builder({ renderOpts: { pretty: false }, headless: true })
 
-var barcodes = [{barcode: 'NYPLTST67891', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: false}, {barcode: 'NYPLTST67892', customercode: 'NA', m876o: '2', m876s: '212', m876y: '55', boundwith: false}, {barcode: 'NYPLTST67893', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: false}, {barcode: 'NYPLTST67894', customercode: 'NA', m876o: '2', m876s: '211', m876y: '57', boundwith: false}, {barcode: 'NYPLTST67895', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: false}, {barcode: 'NYPLTST67896', customercode: 'NA', m876o: '2', m876s: '227', m876y: '55', boundwith: false}, {barcode: 'NYPLTST67881', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: false}, {barcode: 'NYPLTST67882', customercode: 'NB', m876o: '2', m876s: '211', m876y: '55', boundwith: false}, {barcode: 'NYPLTST67883', customercode: 'NH', m876o: '2', m876s: '211', m876y: '55', boundwith: false}, {barcode: 'NYPLTST67884', customercode: 'NP', m876o: '2', m876s: '211', m876y: '55', boundwith: false}, {barcode: 'NYPLTST67885', customercode: 'NW', m876o: 'u', m876s: '210', m876y: '', boundwith: false}, {barcode: 'NYPLTST67886', customercode: 'NX', m876o: '2', m876s: '211', m876y: '55', boundwith: false}, {barcode: 'NYPLTST67887', customercode: 'GN', m876o: '2', m876s: '211', m876y: '55', boundwith: false}, {barcode: 'NYPLTST67888', customercode: 'NN', m876o: '2', m876s: '211', m876y: '65', boundwith: false}, {barcode: 'NYPLTST67889', customercode: 'NO', m876o: '2', m876s: '211', m876y: '61', boundwith: false}, {barcode: 'NYPLTST67880', customercode: 'NQ', m876o: 'p', m876s: '211', m876y: '37', boundwith: false}, {barcode: 'NYPLTST67870', customercode: 'NR', m876o: '4', m876s: '211', m876y: '66', boundwith: false}]
-var barcodesBoundWith = [{barcode: 'NYPLTST67897', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: true}, {barcode: 'NYPLTST67897', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: true}, {barcode: 'NYPLTST67897', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: true}]
-var counter = 90000000
-var exmapleData = {}
+const barcodes = [{ barcode: 'NYPLTST67891', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: false }, { barcode: 'NYPLTST67892', customercode: 'NA', m876o: '2', m876s: '212', m876y: '55', boundwith: false }, { barcode: 'NYPLTST67893', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: false }, { barcode: 'NYPLTST67894', customercode: 'NA', m876o: '2', m876s: '211', m876y: '57', boundwith: false }, { barcode: 'NYPLTST67895', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: false }, { barcode: 'NYPLTST67896', customercode: 'NA', m876o: '2', m876s: '227', m876y: '55', boundwith: false }, { barcode: 'NYPLTST67881', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: false }, { barcode: 'NYPLTST67882', customercode: 'NB', m876o: '2', m876s: '211', m876y: '55', boundwith: false }, { barcode: 'NYPLTST67883', customercode: 'NH', m876o: '2', m876s: '211', m876y: '55', boundwith: false }, { barcode: 'NYPLTST67884', customercode: 'NP', m876o: '2', m876s: '211', m876y: '55', boundwith: false }, { barcode: 'NYPLTST67885', customercode: 'NW', m876o: 'u', m876s: '210', m876y: '', boundwith: false }, { barcode: 'NYPLTST67886', customercode: 'NX', m876o: '2', m876s: '211', m876y: '55', boundwith: false }, { barcode: 'NYPLTST67887', customercode: 'GN', m876o: '2', m876s: '211', m876y: '55', boundwith: false }, { barcode: 'NYPLTST67888', customercode: 'NN', m876o: '2', m876s: '211', m876y: '65', boundwith: false }, { barcode: 'NYPLTST67889', customercode: 'NO', m876o: '2', m876s: '211', m876y: '61', boundwith: false }, { barcode: 'NYPLTST67880', customercode: 'NQ', m876o: 'p', m876s: '211', m876y: '37', boundwith: false }, { barcode: 'NYPLTST67870', customercode: 'NR', m876o: '4', m876s: '211', m876y: '66', boundwith: false }]
+const barcodesBoundWith = [{ barcode: 'NYPLTST67897', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: true }, { barcode: 'NYPLTST67897', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: true }, { barcode: 'NYPLTST67897', customercode: 'NA', m876o: '2', m876s: '211', m876y: '55', boundwith: true }]
+let counter = 90000000
+const exmapleData = {}
 
 convert2Scsb.parseMrc.nonNumericBarcodesOkay = true
 
@@ -25,7 +25,7 @@ H(new marc.Iso2709Reader(fs.createReadStream('data/NYPLTEST.mrc')))
     record = convert2Scsb.parseMrc.convertToJsonCheckSize(record)
     record.bNumber = convert2Scsb.parseMrc.extractBnumber(record.mij) // 907|a
     record.bNumber = `.b${++counter}`
-    var barcode = null
+    let barcode = null
 
     if (counter < 90000013) {
       barcode = barcodes.shift()
@@ -34,70 +34,70 @@ H(new marc.Iso2709Reader(fs.createReadStream('data/NYPLTEST.mrc')))
       barcode = barcodesBoundWith[Math.floor(Math.random() * (3 - 0) + 0)]
     }
 
-    var inumber = `.i${Math.floor(Math.random() * (99999999 - 10000000) + 10000000)}`
-    var callnumber = `JFA-${Math.floor(Math.random() * (9999 - 100) + 100)}`
+    const inumber = `.i${Math.floor(Math.random() * (99999999 - 10000000) + 10000000)}`
+    const callnumber = `JFA-${Math.floor(Math.random() * (9999 - 100) + 100)}`
 
     record.mij.fields.push({
-      '852': {
-        'ind1': ' ',
-        'ind2': ' ',
-        'subfields': [
+      852: {
+        ind1: ' ',
+        ind2: ' ',
+        subfields: [
           {
-            'a': inumber
+            a: inumber
           },
           {
-            'b': 'rcxx2'
+            b: 'rcxx2'
           },
           {
-            'h': '*ZZ-27060'
+            h: '*ZZ-27060'
           }
         ]
       }
     })
 
     record.mij.fields.push({
-      '876': {
-        'ind1': ' ',
-        'ind2': ' ',
-        'subfields': [
+      876: {
+        ind1: ' ',
+        ind2: ' ',
+        subfields: [
           {
-            'a': inumber
+            a: inumber
           },
           {
-            'j': '-'
+            j: '-'
           },
           {
-            'h': callnumber
+            h: callnumber
           },
           {
-            'k': 'rcxx2'
+            k: 'rcxx2'
           },
           {
-            'o': barcode.m876o
+            o: barcode.m876o
           },
           {
-            'p': barcode.barcode
+            p: barcode.barcode
           },
           {
-            's': barcode.m876s
+            s: barcode.m876s
           },
           {
-            't': '1'
+            t: '1'
           },
           {
-            'y': barcode.m876y
+            y: barcode.m876y
           }
         ]
       }
     })
 
     record.mij.fields.push({
-      '952': {
-        'ind1': ' ',
-        'ind2': ' ',
-        'subfields': [
+      952: {
+        ind1: ' ',
+        ind2: ' ',
+        subfields: [
           {
-            'h': callnumber
+            h: callnumber
           }
         ]
       }
@@ -146,16 +146,17 @@ H(new marc.Iso2709Reader(fs.createReadStream('data/NYPLTEST.mrc')))
     // pull out the data we need for the sheet
     record.dataFields.forEach((df) => {
       if (df['245']) {
-        var title = ''
+        let title = ''
 
         df['245'].subfields.forEach((sf) => {
-          if (sf['a']) title = title + sf['a']
-          if (sf['b']) title = title + sf['b']
+          if (sf.a) title = title + sf.a
+          if (sf.b) title = title + sf.b
         })
         console.log(barcode.barcode + ',' + title + ',"' + record.mij.leader.substr(7, 1) + '"')
       }
     })
     exmapleData[barcode.barcode].push(record.xml)
+    return null
   })
   .done(() => {
     fs.writeFile('data/mock.json', JSON.stringify(exmapleData, null, 2), function (err) {
