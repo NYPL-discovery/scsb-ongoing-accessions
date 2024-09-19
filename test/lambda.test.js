@@ -41,10 +41,7 @@ describe('Lambda index handler', function () {
 
   after(function () {
     DataApiClient.prototype.get.restore()
-  })
-
-  it('should be true', function () {
-    expect(true).to.equal(true)
+    exitHandler({ exit: true })
   })
 
   it('should respond with error if customerCode missing', function () {
@@ -59,48 +56,48 @@ describe('Lambda index handler', function () {
         expect(body.statusCode).to.equal(400)
       })
   })
-  //
-  // it('should respond with error if barcode and bnumber missing', function () {
-  //   return LambdaTester(handler)
-  //     .event({ path: '/api/v0.1/recap/nypl-bibs', queryStringParameters: { customerCode: 'PL' } })
-  //     .expectResult((result) => {
-  //       expect(result.statusCode).to.equal(400)
-  //       const body = JSON.parse(result.body)
-  //       expect(body).to.be.a('object')
-  //       expect(body.errorCode).to.be.a('string')
-  //       expect(body.errorCode).to.equal('InvalidParameterError')
-  //       expect(body.statusCode).to.equal(400)
-  //     })
-  // })
-  //
-  // it('should respond with 400 if item found, but not valid for recap', function () {
-  //   return LambdaTester(handler)
-  //     .event({ path: '/api/v0.1/recap/nypl-bibs', queryStringParameters: { barcode: '11111111111111', customerCode: 'NA' } })
-  //     .expectResult((result) => {
-  //       expect(result.statusCode).to.equal(400)
-  //       expect(result.body).to.be.a('string')
-  //
-  //       const body = JSON.parse(result.body)
-  //       expect(body).to.be.a('object')
-  //       expect(body.statusCode).to.equal(400)
-  //       expect(body.error).to.equal('SCSB XML Formatter determined that no items were suitable for export to Recap')
-  //     })
-  // })
-  //
-  // it('should respond with 404 if item not found in ItemService', function () {
-  //   return LambdaTester(handler)
-  //     .event({ path: '/api/v0.1/recap/nypl-bibs', queryStringParameters: { barcode: '1234567891011', customerCode: 'NA' } })
-  //     .expectResult((result) => {
-  //       expect(result.statusCode).to.equal(404)
-  //       expect(result.body).to.be.a('string')
-  //
-  //       const body = JSON.parse(result.body)
-  //       expect(body).to.be.a('object')
-  //       expect(body.statusCode).to.equal(404)
-  //       expect(body.error).to.equal('Barcode not found in ItemService')
-  //     })
-  // })
-  //
+
+  it('should respond with error if barcode and bnumber missing', function () {
+    return LambdaTester(handler)
+      .event({ path: '/api/v0.1/recap/nypl-bibs', queryStringParameters: { customerCode: 'PL' } })
+      .expectResult((result) => {
+        expect(result.statusCode).to.equal(400)
+        const body = JSON.parse(result.body)
+        expect(body).to.be.a('object')
+        expect(body.errorCode).to.be.a('string')
+        expect(body.errorCode).to.equal('InvalidParameterError')
+        expect(body.statusCode).to.equal(400)
+      })
+  })
+
+  it('should respond with 400 if item found, but not valid for recap', function () {
+    return LambdaTester(handler)
+      .event({ path: '/api/v0.1/recap/nypl-bibs', queryStringParameters: { barcode: '11111111111111', customerCode: 'NA' } })
+      .expectResult((result) => {
+        expect(result.statusCode).to.equal(400)
+        expect(result.body).to.be.a('string')
+
+        const body = JSON.parse(result.body)
+        expect(body).to.be.a('object')
+        expect(body.statusCode).to.equal(400)
+        expect(body.error).to.equal('SCSB XML Formatter determined that no items were suitable for export to Recap')
+      })
+  })
+
+  it('should respond with 404 if item not found in ItemService', function () {
+    return LambdaTester(handler)
+      .event({ path: '/api/v0.1/recap/nypl-bibs', queryStringParameters: { barcode: '1234567891011', customerCode: 'NA' } })
+      .expectResult((result) => {
+        expect(result.statusCode).to.equal(404)
+        expect(result.body).to.be.a('string')
+
+        const body = JSON.parse(result.body)
+        expect(body).to.be.a('object')
+        expect(body.statusCode).to.equal(404)
+        expect(body.error).to.equal('Barcode not found in ItemService')
+      })
+  })
+
   it('should respond with correct bib & item if barcode and customerCode given', function () {
     return LambdaTester(handler)
       .event({ path: '/api/v0.1/recap/nypl-bibs', queryStringParameters: { barcode: '33433047331719', customerCode: 'PL' } })
