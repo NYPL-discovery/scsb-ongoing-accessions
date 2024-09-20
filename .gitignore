@@ -2,3 +2,12 @@ build/*
 node_modules
 .DS_Store
 .lambda
+provisioning/base/.terraform/*
+provisioning/base/.terraform.lock.hcl
+provisioning/base/dist.zip
+provisioning/qa/.terraform/*
+provisioning/qa/.terraform.lock.hcl
+provisioning/qa/dist.zip
+provisioning/production/.terraform/*
+provisioning/production/.terraform.lock.hcl
+provisioning/production/dist.zip
