@@ -57,31 +57,6 @@ app.get('/api/v0.1/recap/nypl-bibs', (req, res, next) => {
     .then((bibIds) => {
       return dataApi.getBibsAndItemsByBibId(bibIds, barcode, includeFullBibTree)
     })
-    // BEGIN: TEMPORARY overide to test mixed-bib split
-    // Essentially: When barcode is one of the three we're testing, override
-    // item and bib ids to emulate "migrating" item out of a mixed bib into a
-    // new bib
-    // ( https://jira.nypl.org/browse/SCC-1531 )
-    .then((bibsAndItems) => {
-      let [bibs, items] = bibsAndItems
-
-      // These are the three barcodes recently deleted from UAT:
-      const overrideBibItemIdForMixedBibSplitTesting = [
-        '33433057523213',
-        '33433016121497',
-        '33433035102635'
-      ]
-
-      if (overrideBibItemIdForMixedBibSplitTesting.indexOf(barcode) >= 0) {
-        // Add 999 suffix to item and bib ids:
-        items[0].id = `${items[0].id}999`
-        items[0].bibIds = items[0].bibIds.map((bibId) => `${bibId}999`)
-        bibs[0].id = `${bibs[0].id}999`
-      }
-
-      return [bibs, items]
-    })
-    // END: TEMPORARY overide to test mixed-bib split
     // Format as scsb xml:
     .then((bibsAndItems) => {
       const [bibs, items] = bibsAndItems
