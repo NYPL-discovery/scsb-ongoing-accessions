@@ -8,8 +8,13 @@ const DataApi = require('../lib/data-api')
 // Require certain argv params to establish what environment to serve:
 require('../lib/local-env-helper')
 
-var argv = require('optimist')
-  .argv
+// var argv = require('optimist')
+//   .argv
+
+const yargs = require('yargs/yargs')
+const { hideBin } = require('yargs/helpers')
+const argv = yargs(hideBin(process.argv)).parse()
+
 
 function client () {
   return (new DataApi()).dataApiClient()
