@@ -36,9 +36,9 @@ app.get('/api/v0.1/recap/nypl-bibs', (req, res, next) => {
     customerCode = req.query.customerCode
   }
 
-  let barcode = req.query.barcode
-  let bibId = req.query.bibId
-  let includeFullBibTree = (req.query.includeFullBibTree === 'true')
+  const barcode = req.query.barcode
+  const bibId = req.query.bibId
+  const includeFullBibTree = (req.query.includeFullBibTree === 'true')
 
   if (!customerCode || !(barcode || bibId)) {
     return handleError(new errors.InvalidParameterError('Missing barcode and customerCode paramaters or bibId and customerCode parameter'), req, res)
@@ -59,7 +59,7 @@ app.get('/api/v0.1/recap/nypl-bibs', (req, res, next) => {
     })
     // Format as scsb xml:
     .then((bibsAndItems) => {
-      let [bibs, items] = bibsAndItems
+      const [bibs, items] = bibsAndItems
       return scsbXmlFormatter.bibsAndItemsToScsbXml(bibs, items, customerCode)
     })
     // Write response:

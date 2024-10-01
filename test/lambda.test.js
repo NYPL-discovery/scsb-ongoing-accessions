@@ -22,7 +22,7 @@ describe('Lambda index handler', function () {
       return Promise.resolve('fake decrypted oauth secret')
     })
     sinon.stub(DataApiClient.prototype, 'get').callsFake(function (apiPath) {
-      let diskPath = path.join('./test/data/', encodeURIComponent(apiPath)) + '.json'
+      const diskPath = path.join('./test/data/', encodeURIComponent(apiPath)) + '.json'
 
       // Fail helpfully
       if (!fs.existsSync(diskPath)) {
@@ -41,6 +41,7 @@ describe('Lambda index handler', function () {
 
   after(function () {
     DataApiClient.prototype.get.restore()
+    exitHandler({ exit: true })
   })
 
   it('should respond with error if customerCode missing', function () {
@@ -48,7 +49,7 @@ describe('Lambda index handler', function () {
       .event({ path: '/api/v0.1/recap/nypl-bibs', queryStringParameters: { barcode: '123' } })
       .expectResult((result) => {
         expect(result.statusCode).to.equal(400)
-        let body = JSON.parse(result.body)
+        const body = JSON.parse(result.body)
         expect(body).to.be.a('object')
         expect(body.errorCode).to.be.a('string')
         expect(body.errorCode).to.equal('InvalidParameterError')
@@ -61,7 +62,7 @@ describe('Lambda index handler', function () {
       .event({ path: '/api/v0.1/recap/nypl-bibs', queryStringParameters: { customerCode: 'PL' } })
       .expectResult((result) => {
         expect(result.statusCode).to.equal(400)
-        let body = JSON.parse(result.body)
+        const body = JSON.parse(result.body)
         expect(body).to.be.a('object')
         expect(body.errorCode).to.be.a('string')
         expect(body.errorCode).to.equal('InvalidParameterError')
@@ -121,8 +122,8 @@ describe('Lambda index handler', function () {
             expect(body.bibRecords.bibRecord[0].bib[0].content[0].collection).to.be.a('array')
             expect(body.bibRecords.bibRecord[0].bib[0].content[0].collection[0].record).to.be.a('array')
 
-            let contributorTags = body.bibRecords.bibRecord[0].bib[0].content[0].collection[0].record[0].datafield
-              .filter((tag) => tag['$'].tag === '100')
+            const contributorTags = body.bibRecords.bibRecord[0].bib[0].content[0].collection[0].record[0].datafield
+              .filter((tag) => tag.$.tag === '100')
               .map((tag) => {
                 // Join all subfield values:
                 return tag.subfield
@@ -141,8 +142,8 @@ describe('Lambda index handler', function () {
             expect(body.bibRecords.bibRecord[0].holdings[0].holding[0].content[0].collection[0].record[0].datafield).to.be.a('array')
 
             // Pull 852 $h (callnumber)
-            let callnumberTags = body.bibRecords.bibRecord[0].holdings[0].holding[0].content[0].collection[0].record[0].datafield
-              .filter((tag) => tag['$'].tag === '852')
+            const callnumberTags = body.bibRecords.bibRecord[0].holdings[0].holding[0].content[0].collection[0].record[0].datafield
+              .filter((tag) => tag.$.tag === '852')
               .map((tag) => {
                 // Get 'h' subfield value (there's only one)
                 return tag.subfield
@@ -160,30 +161,30 @@ describe('Lambda index handler', function () {
             expect(body.bibRecords.bibRecord[0].holdings[0].holding[0].items[0].content[0].collection[0].record).to.be.a('array')
             expect(body.bibRecords.bibRecord[0].holdings[0].holding[0].items[0].content[0].collection[0].record[0].datafield).to.be.a('array')
 
-            let datafields = body.bibRecords.bibRecord[0].holdings[0].holding[0].items[0].content[0].collection[0].record[0].datafield
+            const datafields = body.bibRecords.bibRecord[0].holdings[0].holding[0].items[0].content[0].collection[0].record[0].datafield
 
             // Map subfield values in 876:
-            let subfieldsIn876 = datafields
+            const subfieldsIn876 = datafields
               .filter((datafield) => datafield.$.tag === '876')[0]
               .subfield
-                .reduce((h, subfield) => {
-                  h[subfield.$.code] = subfield._
-                  return h
-                }, {})
-            expect(subfieldsIn876['p']).to.equal('33433047331719')
+              .reduce((h, subfield) => {
+                h[subfield.$.code] = subfield._
+                return h
+              }, {})
+            expect(subfieldsIn876.p).to.equal('33433047331719')
             // expect(subfieldsIn876['h']).to.equal('In Library Use') #TODO: Check to make sure this is correct.
-            expect(subfieldsIn876['j']).to.equal('Available')
+            expect(subfieldsIn876.j).to.equal('Available')
 
             // Map subfield values in 900:
-            let subfieldsIn900 = datafields
+            const subfieldsIn900 = datafields
               .filter((datafield) => datafield.$.tag === '900')[0]
               .subfield
-                .reduce((h, subfield) => {
-                  h[subfield.$.code] = subfield._
-                  return h
-                }, {})
+              .reduce((h, subfield) => {
+                h[subfield.$.code] = subfield._
+                return h
+              }, {})
             // expect(subfieldsIn900['a']).to.equal('Private') #TODO: Check to make sure this is what we want.
-            expect(subfieldsIn900['b']).to.equal('PL')
+            expect(subfieldsIn900.b).to.equal('PL')
 
             resolve()
           })
