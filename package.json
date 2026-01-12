@@ -23,7 +23,7 @@
     "@aws-sdk/client-kms": "^3.926.0",
     "aws-serverless-express": "^3.0.2",
     "cors": "^2.8.4",
-    "express": "^4.15.4",
+    "express": "^4.22.1",
     "highland": "^2.10.1",
     "marcjs": "2.0.1",
     "node-gyp": "^10.2.0",
